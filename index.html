@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="container">
+</div>
+<script type="text/javascript">
+let container = document.getElementById('container');
+let count = 40;
+for (let i=0; i < 3 ; i++){
+    let threadbox = document.createElement('div');
+    threadbox.className = 'box';
+    container.appendChild(threadbox);
+}
+setInterval(function(){
+let thread = document.getElementsByClassName('box');
+for(let i = 0; i < thread.length ; i++){
+    thread[i].style.left = Math.floor(Math.random()*90) + 'vw';
+    thread[i].style.top = Math.floor(Math.random()*80) + 'vh';
+}
+},2000);
+</script>
+</body>
+</html>
